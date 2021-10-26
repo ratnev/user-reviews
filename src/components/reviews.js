@@ -1,22 +1,27 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {connect} from 'react-redux';
 import './reviews.css';
-import {ReviewForm} from './review-form';
 import {ReviewPost}  from './review'
 
-export function ReviewsList() {
-  const [reviews, setReviews] = useState([{id: "12345",name: "John Dough", comment: "Very nice indeed"}]);
-
+const ReviewsList = ({syncReviews}) => {
   return (
     <div className="rootWrapper">
       <h1>User Reviews</h1>
       <ul className="reviewsList">
-      {reviews.map(review => 
+      {syncReviews.map(review => 
         <li key={review.id}>
-        <ReviewPost name={review.name} comment={review.comment}/>
+        <ReviewPost review={review}/>
         </li>
       )}
       </ul>
-        <ReviewForm />
     </div>
   )
 }
+
+const mapStateToProps = state => {
+  return {
+    syncReviews: state.reviews.reviews
+  }
+}
+
+export default connect(mapStateToProps, null)(ReviewsList)

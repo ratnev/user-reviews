@@ -1,10 +1,16 @@
-import {ReviewsList} from './components/reviews'
+import ReviewsList from './components/reviews'
+import ReviewForm from './components/review-form'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <ReviewsList />
+      <section>
+        <ReviewsList />
+      </section>
+      <section>
+        <ReviewForm/>
+      </section>
     </div>
   );
 }

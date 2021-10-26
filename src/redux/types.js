@@ -1,0 +1,2 @@
+export const CREATE_REVIEW = 'CREATE_REVIEW'
+export const REMOVE_REVIEW = 'REMOVE_REVIEW '
