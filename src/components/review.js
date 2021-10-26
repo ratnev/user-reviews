@@ -1,9 +1,16 @@
 import React from 'react';
 import './reviews.css';
+import {connect} from 'react-redux';
+import {removeReview} from '../redux/actions';
 import avatarIcon from '../assets/Bioman-Avatar-1-Red-icon.png'
 import deleteIcon from '../assets/icons8-delete.svg'
 
-export function ReviewPost({review}) {
+const ReviewPost = ({review, removeReview}) => {
+
+
+  const handleRemove = id => {
+    removeReview(id)
+  }
 
   return (
     <div className="reviewWrapper">
@@ -16,7 +23,13 @@ export function ReviewPost({review}) {
          {review.comment}
        </p>
      </div>
-     <img src={deleteIcon} alt="delete icon" className="deleteIcon"></img>
+     <img src={deleteIcon} alt="delete icon" className="deleteIcon" onClick={() => handleRemove(review.id)}></img>
     </div>
   )
 }
+
+const mapDispatchToProps = {
+  removeReview
+}
+
+export default connect(null, mapDispatchToProps )(ReviewPost)

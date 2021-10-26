@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import './reviews.css';
-import {ReviewPost}  from './review'
+import ReviewPost  from './review'
 
 const ReviewsList = ({syncReviews}) => {
   return (
