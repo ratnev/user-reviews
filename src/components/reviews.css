@@ -1,0 +1,105 @@
+.rootWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rootWrapper > * {
+  width: 100%;
+}
+
+.rootWrapper > h1 {
+  margin: 0;
+  margin-bottom: 2rem;
+  width: fit-content;
+  color: indigo;
+}
+
+.reviewWrapper {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+.imageContainer {
+  margin-right: 1.5rem;
+}
+
+.deleteIcon {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reviewerName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.reviewerComment {
+  font-size: 1rem;
+  font-weight: 400;
+  color: gray;
+  padding: 0;
+  margin: 0;
+}
+
+.re .formWrapper {
+  padding: 1.5rem;
+  border: 1px solid darkblue;
+  border-radius: 6px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.formContainer > *:not(button) {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.reviewsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.reviewsList > li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+input {
+  height: 2rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+textarea {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0 0.5rem;
+  height: 2rem;
+  min-width: 120px;
+  background-color: blue;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
