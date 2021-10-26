@@ -1,10 +1,26 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {createReview} from '../redux/actions';
+import axios from 'axios';
 import './reviews.css';
+
+axios.interceptors.request.use(config => {
+  console.log('Request was sent');
+
+  return config;
+}, error => {
+  // handle the error
+  return Promise.reject(error);
+});
 
 const ReviewForm = ({createReview}) => {
   const [state, setState] = useState({name: '', comment: ''})
+
+  const addNewReview = (userName, payload) => {
+    axios.post(`https://bad-domain.com/api/ui/user/${userName}/reviews`, payload)
+    .then(response => console.log(response))
+    .catch(error => alert(error));
+  }
 
   const submitHandler = event => {
     event.preventDefault()
@@ -19,6 +35,7 @@ const ReviewForm = ({createReview}) => {
 
 
     createReview(newReview);
+    addNewReview('Denys', newReview);
     setState({name: '', comment: ''});
   }
 
